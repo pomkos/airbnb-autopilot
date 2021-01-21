@@ -1,0 +1,36 @@
+{
+  "name": "Autopilot for Airbnb",
+  "short_name": "Airbnb Auto",
+  "homepage_url": "https://github.com/Geczy/airbnb-autopilot/",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "description": "Don't waste any more time doing manual tasks on Airbnb. Autopilot will do it for you.",
+  "manifest_version": 2,
+  "update_url": "https://clients2.google.com/service/update2/crx",
+  "version": "2.4.1",
+  "author": "A Lonely Coder",
+  "background": {
+    "scripts": [
+      "bg.js"
+    ],
+    "persistent": true
+  },
+  "web_accessible_resources": ["main.js"],
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+  "devtools_page": "devtools.html",
+  "content_scripts": [
+    {
+      "run_at": "document_start",
+      "js": [
+        "loader.js"
+      ],
+      "matches": [
+        "https://airbnb.com/*",
+        "https://*.airbnb.com/*"
+      ]
+    }
+  ]
+}

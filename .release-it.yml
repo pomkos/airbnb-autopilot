@@ -1,0 +1,15 @@
+npm:
+  publish: false
+hooks:
+  after:bump:
+    - rm -f dist/airbnb-autopilot-v*.zip
+    - bash chrome/bump-version.sh ${version}
+    - yarn build
+    - cd dist/ && bestzip airbnb-autopilot-v${version}.zip * && cd ..
+  after:release: rm dist/airbnb-autopilot-v*.zip
+git:
+  requireCleanWorkingDir: false
+github:
+  assets:
+    - dist/airbnb-autopilot-v*.zip
+  release: true
