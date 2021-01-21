@@ -5,12 +5,7 @@ import { findReactComponent, updateProps, getDistance } from './misc/helper';
 
 const markers = [
   { name: 'planet fitness', icon: 'https://i.imgur.com/vKC4am1.png' },
-  {
-    name: 'snap fitness',
-    icon: 'https://pbs.twimg.com/profile_images/632298145146400768/ENAW4nwo_400x400.jpg',
-    required: 5 // require to be within 5 miles
-  },
-  { name: 'walmart', icon: 'https://i.imgur.com/5nLBm2v.png?1' }
+  { name: 'coffee', icon: ''}
 ];
 
 let geoLocationForRoom = {};
